@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website JavaScript Only</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    header, footer {
+      background-color: #007acc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    main {
+      margin-top: 20px;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function createElement(tag, text, parent, className) {
+      const el = document.createElement(tag);
+      if (text) el.textContent = text;
+      if (className) el.className = className;
+      parent.appendChild(el);
+      return el;
+    }
+
+    const header = createElement("header", "Selamat Datang di Website Saya", document.body);
+    
+    const main = createElement("main", null, document.body);
+
+    const about = createElement("section", null, main);
+    createElement("h2", "Tentang Saya", about);
+    createElement("p", "Saya seorang pengembang web yang suka membangun proyek menggunakan JavaScript.", about);
+
+    const portfolio = createElement("section", null, main);
+    createElement("h2", "Portofolio", portfolio);
+    createElement("p", "Berikut beberapa proyek saya yang sedang atau telah dikembangkan.", portfolio);
+
+    const contact = createElement("section", null, main);
+    createElement("h2", "Kontak", contact);
+    createElement("p", "Hubungi saya di: email@example.com", contact);
+
+    const footer = createElement("footer", "© 2025 Muhamad Kelvin", document.body);
+  </script>
+</body>
+</html>
